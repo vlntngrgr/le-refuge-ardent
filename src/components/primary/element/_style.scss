@@ -1,0 +1,110 @@
+.primary-item {
+  $root: '.primary-item';
+
+  $bg-color: rgba(155, 0, 54, 1);
+  $bd-color: rgb(255, 0, 0);
+  $f-color: rgba(255, 255, 255, 1);
+
+  color: $f-color;
+  
+  font-size: 1.3rem;
+  padding: .2rem .5rem; 
+  position: relative;
+
+  width: auto;
+
+  margin: 0 1rem;
+
+  word-wrap: break-word;
+
+  #{$root}__icon {
+    width:  1.2rem;
+    height:  1.2rem;
+    
+    padding: 0 .5rem;
+  }
+
+  #{$root}__link {
+    font-style: normal;
+    
+    color: $f-color;
+  }
+
+  #{$root}__children {
+    display: none;
+    list-style: none;
+    
+    position: absolute;
+
+    width: auto;
+
+    & > #{$root} {
+      margin: .5rem 0;
+    }
+  }
+
+  ////////////////////////////////////////
+  //  STATES
+  ////////////////////////////////////////
+  &:hover,
+  &:focus {
+    border: 1px solid $bd-color;
+    border-radius: 4px;
+    & * { font-weight: normal; }
+    cursor: pointer;
+
+    #{$root}__children {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 1;
+      width: max-content;
+
+      padding: 0;
+      margin: .3rem;
+      padding: .3rem;
+
+      background-color: $bg-color;
+
+      z-index: 10000;
+    }
+  }
+
+  &.-is-active {
+    border: 1px solid $bd-color;
+    border-radius: 4px;
+  }
+
+  &.-is-disabled {
+    opacity: .75;
+
+    &:hover,
+    &:focus {
+      border: none;
+      border-bottom: 1px solid black;
+      border-radius: 0px;
+    }
+  }
+
+  &.-is-hidden {
+    display: none;
+  }
+
+  &.-has-icon { }
+  &.-has-events { }
+
+  @media screen and (max-width: 961px) {
+    & {
+      max-width: 310px;
+      font-size: 1.4rem;
+      margin: 0;
+      width: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      #{$root}__children {
+        position: relative;
+      }
+    }
+  }
+}

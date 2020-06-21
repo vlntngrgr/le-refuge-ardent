@@ -1,0 +1,147 @@
+.menu-mood {
+    $root: '.menu-mood';
+
+    // Mood color
+    $bg-mood: lighten(rgb(187, 0, 78), 10%); 
+    $bc-mood: rgba(200, 200, 200, 0.6); 
+
+    display: none;
+    background-color: transparent;
+    
+    position: fixed;
+    bottom: 10%;
+    left: 20%;
+    
+    &.-is-transition {
+        #{$root}__header {
+            animation: close .5s 1;
+        }
+    }
+
+    #{$root}__header {
+        background-color: $bg-mood;
+        font-size: 2rem;
+        
+        border-radius: 100%;
+
+        min-height: 7.5rem;
+        height: auto;
+        max-height: 10%;
+
+        min-width: 7.5rem;
+        width: auto;
+        max-width: 10%;
+
+
+        display: flex;
+        align-items: center;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #{$root}__content {
+        animation: open .5s 1;
+
+        font-size: 2rem;
+
+        min-height: 15rem;
+        height: auto;
+        max-height: 25%;
+
+        min-width: 25rem;
+        height: auto;
+        max-height: 25%;
+
+        border-radius: 10px;
+
+        background-color: $bg-mood;
+
+        display: flex;
+        justify-content: flex-end;
+
+        padding-right: 2rem;
+
+        // &:before {
+        //     content:'';
+            
+        //     background-image: url('/svg/bubbles.svg');
+        //     background-repeat: repeat-x;
+
+        //     position: absolute;
+        //     top: -5rem;
+        //     right: 0rem;
+
+        //     width: 15rem;
+        //     height: 5rem;
+        // }
+
+        // &:after {
+        //     content:'';
+            
+        //     background-image: url('/svg/bubbles.svg');
+        //     background-repeat: repeat-y;
+
+        //     position: absolute;
+        //     top: -3rem;
+        //     right: -5rem;
+
+        //     width: 5rem;
+        //     height: 15rem;
+        // }
+    }
+
+    @keyframes open {
+        from {
+            min-height: 7.5rem;
+            height: auto;
+            max-height: 10%;
+
+            min-width: 7.5rem;
+            width: auto;
+            max-width: 10%;
+
+            border-radius: 100%;
+        }
+
+        to {
+            min-height: 15rem;
+            height: auto;
+            max-height: 25%;
+
+            min-width: 25rem;
+            width: auto;
+            max-width: 25%;
+
+            border-radius: 10px;
+        }
+    }
+
+    @keyframes close {
+        from {
+            min-height: 15rem;
+            height: auto;
+            max-height: 25%;
+
+            min-width: 25rem;
+            width: auto;
+            max-width: 25%;
+
+            border-radius: 10px;
+        }
+
+        to {
+            min-height: 7.5rem;
+            height: auto;
+            max-height: 10%;
+
+            min-width: 7.5rem;
+            width: auto;
+            max-width: 10%;
+
+            border-radius: 100%;
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+.rire {
+    $root: '.rire';
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &:after {
+        content: '';
+
+        position: fixed;
+        top: 12%;
+        left: 10%;
+        opacity: .7;
+
+        width: 20rem;
+        height: 20rem;
+
+        transform: rotate(60deg);
+        
+        background: url('/img/icons/logo.png');
+        background-size: 100%;
+
+        z-index: -1;
+    }
+
+    #{$root}__choice {
+        width: fit-content;
+        background-color: beige;
+        
+        margin-right: 10%;
+        margin-bottom: 1rem;
+
+        padding: 0 1rem;
+
+        border: 3px solid lighten(black, 30%);
+        border-radius: 40px;
+
+        font-size: 1.5rem;
+
+        & .title  {
+            margin: 0;
+        }
+    }
+
+    #{$root}__list {
+        max-width: 40%;
+        background-color: beige;
+
+        font-size: 1.5rem;
+
+        margin-left: 4rem;
+        padding-bottom: 2rem;
+
+        border-left: 3px solid lighten(black, 30%);
+        border-right: 3px solid lighten(black, 30%);
+        border-bottom: 3px solid lighten(black, 30%);
+    }
+}

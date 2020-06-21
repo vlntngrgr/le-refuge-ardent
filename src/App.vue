@@ -1,32 +1,196 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <div>
+            <menu-primary :header="{ label: 'Le refuge ardent'}" :menu="menu" />
+
+            <menu-mood>
+                <template v-slot:header>Ton humeur</template>
+                <template>Ici ton menu d'humeur</template>
+            </menu-mood>
+
+            <router-view />
+        </div>
+        
+        <footer>
+            <div class="cookie">
+                Ce site n’utilise pas de cookies… Sauf ceux double chocolat qui se sont sacrifiés pour que je puisse développer ledit site… Merci les gars #lesauveurs #tousensemble #lepleindenergie 
+                <div class="legal">
+                    <router-link
+                        class="link"
+                        :to="{ name: 'mentions-legales'}"
+                    >Mentions légales</router-link>
+                </div>
+            </div>
+        </footer>
     </div>
-    <router-view/>
-  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import MenuPrimary from "./components/primary";
+import MenuMood from "./components/mood";
 
-#nav {
-  padding: 30px;
+export default {
+    name: "BurningShellIndex",
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+    components: {
+        MenuMood,
+        MenuPrimary
+    },
 
-    &.router-link-exact-active {
-      color: #42b983;
+    computed: {
+        menu() {
+            let ret = [];
+
+            // HOME
+            ret.push({
+                active: this.$route.name === "accueil",
+                label: "Accueil",
+                name: "accueil",
+                route: {
+                    name: "accueil"
+                }
+            });
+
+            // Musiques
+            ret.push({
+                active: this.$route.name.includes("musiques"),
+                label: "Musiques",
+                name: "musiques",
+                children: [
+                    {
+                        active: this.$route.name === "musiques-chill",
+                        label: "Chill / Relax",
+                        name: "musiques-chill",
+                        route: {
+                            name: "musiques-chill"
+                        }
+                    },
+                    {
+                        active: this.$route.name === "musiques-troll",
+                        label: "Troll / Révolutionnaire",
+                        name: "musiques-troll",
+                        route: {
+                            name: "musiques-troll"
+                        }
+                    }
+                ]
+            });
+
+            // Voyager
+            ret.push({
+                hidden: true,
+                disabled: true,
+                label: "Voyager",
+                name: "voyager",
+                children: [
+                    {
+                        disabled: true,
+                        label: "Photos",
+                        name: "voyager-photos"
+                    },
+                    {
+                        disabled: true,
+                        label: "Recits de voyage",
+                        name: "voyager-recits"
+                    }
+                ]
+            });
+
+            // Musiques
+            ret.push({
+                active: this.$route.name.includes("rire"),
+                label: "Rire",
+                name: "rire",
+                children: [
+                    {
+                        active: this.$route.name === "rire-chroniques",
+                        label: "Petites chroniques de la Wallonie profonde",
+                        name: "rire-chroniques",
+                        route: {
+                            name: "rire-chroniques"
+                        }
+                    },
+                    {
+                        active: this.$route.name.includes("memes"),
+                        label: "Memes",
+                        name: "rire-memes",
+                        children: [
+                            {
+                                active: this.$route.name === "rire-memes-troll",
+                                label: "Troll",
+                                name: "rire-memes-troll",
+                                route: {
+                                    name: "rire-memes-troll"
+                                }
+                            },
+                            {
+                                active: this.$route.name === "rire-memes-geek",
+                                label: "Geek",
+                                name: "rire-memes-geek",
+                                route: {
+                                    name: "rire-memes-geek"
+                                }
+                            },
+                            {
+                                hidden: true,
+                                disabled: true,
+                                label: "Homme/Femme",
+                                name: "rire-memes-hf"
+                            }
+                        ]
+                    }
+                ]
+            });
+
+            // Evasion
+            ret.push({
+                active: this.$route.name.includes('evasion'),
+                label: "S'évader",
+                name: "evasion",
+                children: [
+                    {
+                        active: this.$route.name === 'evasion-fantasy',
+                        label: "Fantasy 2.0",
+                        name: "evasion-fantasy",
+                        route: {
+                            name: "evasion-fantasy"
+                        }
+                    },
+                    {
+                        disabled: true,
+                        label: "L'innocente",
+                        name: "evasion-innocente"
+                    }
+                ]
+            });
+
+            // Pleine conscience
+            ret.push({
+                label: "Pleine conscience",
+                name: "conscience",
+                children: [
+                    {
+                        label: "Méditation",
+                        name: "conscience-meditation",
+                        route: {
+                            name: "meditation"
+                        }
+                    },
+                    {
+                        disabled: true,
+                        label: "Auto-compassion",
+                        name: "conscience-compassion"
+                    },
+                    {
+                        disabled: true,
+                        label: "Relaxation",
+                        name: "conscience-relaxation"
+                    }
+                ]
+            });
+
+            return ret;
+        }
     }
-  }
-}
-</style>
+};
+</script>

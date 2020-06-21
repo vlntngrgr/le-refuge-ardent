@@ -1,0 +1,100 @@
+.memes {
+    $root: '.memes';
+
+    &:before {
+        content: '';
+
+        position: fixed;
+        bottom: 12%;
+        left: -5%;
+        opacity: .7;
+
+        width: 20rem;
+        height: 20rem;
+
+        transform: rotate(60deg);
+        
+        background: url('/img/icons/logo.png');
+        background-size: 100%;
+
+        z-index: -1;
+    }
+
+    &:after {
+        content: '';
+
+        position: fixed;
+        top: 12%;
+        right: -5%;
+        opacity: .7;
+
+        width: 20rem;
+        height: 20rem;
+
+        transform: rotate(60deg);
+        
+        background: url('/img/icons/logo.png');
+        background-size: 100%;
+
+        z-index: -1;
+    }
+
+    #{$root}__items {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #{$root}__item {
+        width: 30%;
+        margin: 1%;
+
+        & :hover, & :focus {
+            border: 10px solid blue;
+            cursor: pointer;
+        }
+    }
+
+    #{$root}__selection {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100vw;
+        height: 100vh;
+        z-index: 10005;
+
+        background-color: rgba(0, 0, 0, .65);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        & * {
+            width: auto;
+            max-width: 75%;
+            height: auto;
+            max-height: 75%;
+        }
+    }
+
+    
+    @media screen and (max-width: 768px) {
+        #{$root}__items {
+            justify-content: space-evenly;
+        }
+    
+        #{$root}__item {
+            width: 40%;
+            height: auto;
+            align-self: auto;
+            margin: 5%;
+
+            & :hover, & :focus {
+                border: 2px solid blue;
+                cursor: pointer;
+            }
+        }
+        
+        
+    }
+}
