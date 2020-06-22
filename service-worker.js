@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.3a2d4729dd847aee619a6b61f0eadb64.js"
+  "/precache-manifest.29350643943382cf8d418628a6b454f5.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "burning-shell"});
