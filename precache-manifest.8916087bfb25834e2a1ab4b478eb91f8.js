@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "248f3579c15cc7b84a5e",
-    "url": "/css/app.353c0143.css"
+    "revision": "7422eb203de40033f1ae",
+    "url": "/css/app.be4c1269.css"
   },
   {
     "revision": "decbb02766deb0afd8342d516dd71fda",
@@ -204,12 +204,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/memes/troll/9.jpg"
   },
   {
-    "revision": "8b7b06e4e39715ec072eac18a8ef4e30",
+    "revision": "adbe7b1b6307feebba6af706ccd20ae4",
     "url": "/index.html"
   },
   {
-    "revision": "248f3579c15cc7b84a5e",
-    "url": "/js/app.5c7873e2.js"
+    "revision": "7422eb203de40033f1ae",
+    "url": "/js/app.f2867490.js"
   },
   {
     "revision": "f5e8255a464600a2d772",
