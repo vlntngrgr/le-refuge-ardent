@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dfe47deea2cc16bea13c",
-    "url": "/css/app.be4c1269.css"
+    "revision": "a81bc0bf912e67bce1bc",
+    "url": "/css/app.6fdac158.css"
   },
   {
     "revision": "decbb02766deb0afd8342d516dd71fda",
@@ -204,16 +204,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/memes/troll/9.jpg"
   },
   {
-    "revision": "76b62a00b70c3fcd58e003596b053794",
+    "revision": "2b8d50a246f727b551cc742a5fe0ee56",
     "url": "/index.html"
   },
   {
-    "revision": "dfe47deea2cc16bea13c",
-    "url": "/js/app.218c3375.js"
+    "revision": "a81bc0bf912e67bce1bc",
+    "url": "/js/app.fa22e075.js"
   },
   {
-    "revision": "f5e8255a464600a2d772",
-    "url": "/js/chunk-vendors.7707a2b8.js"
+    "revision": "9ff28345ea5b90e35369",
+    "url": "/js/chunk-vendors.85ab7741.js"
   },
   {
     "revision": "72291cbe37a804ad090e0834f2c639bc",
