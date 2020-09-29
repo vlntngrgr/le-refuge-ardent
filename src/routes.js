@@ -1,6 +1,3 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-
 import Accueil from './views'
 
 import Musiques from './views/musiques'
@@ -17,12 +14,12 @@ import EvasionFantasy from './views/evasion/fantasy'
 import EvasionFantasy2100 from './views/evasion/fantasy/2100'
 
 import Meditation from './views/consciente/meditation'
+import AutoCompassion from './views/consciente/compassion'
+import AutoCompassionArticle from './views/consciente/compassion/articles'
 
 import MentionsLegales from './views/legal/mentions'
 
 import Page404 from './views/errors/404'
-
-Vue.use(VueRouter)
 
 const routes = [
   {
@@ -89,6 +86,17 @@ const routes = [
     path: '/meditation',
     component: Meditation
   },
+  {
+    name: 'compassion',
+    path: '/compassion',
+    component: AutoCompassion
+  },
+  {
+    name: 'compassion-article',
+    path: '/compassion/:id',
+    component: AutoCompassionArticle
+  },
+  
 
   {
     name: 'mentions-legales',
@@ -103,11 +111,4 @@ const routes = [
   }
 ]
 
-
-const router = new VueRouter({
-  mode: 'history',  
-  base: process.env.BASE_URL,
-  routes
-});
-
-export default router
+export default routes

@@ -177,9 +177,11 @@ export default {
                         }
                     },
                     {
-                        disabled: true,
                         label: "Auto-compassion",
-                        name: "conscience-compassion"
+                        name: "conscience-compassion",
+                        route: {
+                            name: "compassion"
+                        }
                     },
                     {
                         disabled: true,
