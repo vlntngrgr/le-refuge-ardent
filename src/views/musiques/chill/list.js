@@ -28,12 +28,14 @@ export default [
         description: 'partez en voyage et… ne vous retournez pas, avec cette musique Indie Folk.'
     },
     {
-        url: 'https://www.youtube.com/watch?v=l7Mq8FGKbdU', description: 'Musiques Ghibli… Pour ma part, rien ne m’habite le cœur aussi bien.'
+        url: 'https://www.youtube.com/watch?v=l7Mq8FGKbdU', 
+        description: 'Musiques Ghibli… Pour ma part, rien ne m’habite le cœur aussi bien.'
     },
     { 
         url: 'https://www.youtube.com/watch?v=qTSFl5O4acE', 
         description: 'Musiques douces et rafraichissantes, pour accompagner l’étude ou la lecture…' 
     },
+    
     // { 
     //     url: 'https://www.youtube.com/watch?v=dr0IcWKSy08', 
     //     description: 'Le piano et l’eau, la musique qui rend tendre.' 

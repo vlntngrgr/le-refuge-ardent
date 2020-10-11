@@ -9,6 +9,18 @@
                 :key="m.key"
                 class="list__item link"
                 target="_blank"
+                v-for="m in musiquesSecond"
+                :href="m.url"
+            >{{ m.description }}</a>
+        </div>
+        
+        <hr />
+
+        <div class="list">
+            <a
+                :key="m.key"
+                class="list__item link"
+                target="_blank"
                 v-for="m in musiques"
                 :href="m.url"
             >{{ m.description }}</a>
@@ -20,6 +32,7 @@
 import UiCard from '@/components/card'
 
 import List from './list'
+import ListSecond from './list2'
 
 export default {
     name: 'MusiquesChill',
@@ -31,6 +44,10 @@ export default {
     computed: {
         musiques() {
             return List
+        },
+
+        musiquesSecond() {
+            return ListSecond
         }
     }
 }

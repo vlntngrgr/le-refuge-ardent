@@ -30,7 +30,7 @@ export default {
 
     computed: {
         articles() {
-            return Articles;
+            return Articles.reverse();
         }
     }
 }
