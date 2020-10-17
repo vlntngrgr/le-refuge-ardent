@@ -12,6 +12,11 @@ html {
     background-color:  beige;
 }
 
+.version {
+    position: fixed;
+    font-size: 1.2rem;
+}
+
 #app {
     $root: '#app';
     $bg: red;

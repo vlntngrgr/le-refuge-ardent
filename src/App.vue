@@ -1,5 +1,9 @@
 <template>
     <div id="app">
+        <div class="version" v-if="isDev">
+            Development
+        </div>
+
         <div>
             <menu-primary :header="{ label: 'Le refuge ardent'}" :menu="menu" />
 
@@ -38,6 +42,10 @@ export default {
     },
 
     computed: {
+        isDev() {
+            return process.env.NODE_ENV === 'development'
+        },
+
         menu() {
             let ret = [];
 
@@ -193,6 +201,9 @@ export default {
 
             return ret;
         }
+    },
+    mounted() {
+        console.log(process.env.NODE_ENV)
     }
 };
 </script>
