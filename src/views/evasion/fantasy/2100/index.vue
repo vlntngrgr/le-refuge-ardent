@@ -30,6 +30,10 @@
             </div>
         </details>
 
+        <div class="signature">
+            <h2 :class="`red`" v-html="`BLUE`"></h2>
+        </div>
+
         <div class="back">
             <button class="button__back" @click="onBack">
                 <back class="button__icon" />

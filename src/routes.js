@@ -14,6 +14,7 @@ import EvasionFantasy from './views/evasion/fantasy'
 import EvasionFantasy2100 from './views/evasion/fantasy/2100'
 
 import Meditation from './views/consciente/meditation'
+import Relaxation from './views/consciente/relaxation'
 import AutoCompassion from './views/consciente/compassion'
 import AutoCompassionArticle from './views/consciente/compassion/articles'
 
@@ -85,6 +86,11 @@ const routes = [
     name: 'meditation',
     path: '/meditation',
     component: Meditation
+  },
+  {
+    name: 'relaxation',
+    path: '/relaxation',
+    component: Relaxation
   },
   {
     name: 'compassion',

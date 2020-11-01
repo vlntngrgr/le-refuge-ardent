@@ -192,9 +192,11 @@ export default {
                         }
                     },
                     {
-                        disabled: true,
                         label: "Relaxation",
-                        name: "conscience-relaxation"
+                        name: "conscience-relaxation",
+                        route: {
+                            name: "relaxation"
+                        }
                     }
                 ]
             });

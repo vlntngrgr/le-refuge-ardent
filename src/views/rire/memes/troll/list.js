@@ -1,4 +1,4 @@
-export default [
+const first = [
     {
         title: null,
         description: null,
@@ -170,3 +170,63 @@ export default [
         link: '/img/memes/troll/36.jpg'
     },
 ];
+
+const second = [
+    {
+        title: null,
+        description: null,
+        link: '/img/memes/troll/37.jpg'
+    },
+    {
+        title: null,
+        description: null,
+        link: '/img/memes/troll/38.jpg'
+    },
+    {
+        title: null,
+        description: null,
+        link: '/img/memes/troll/39.jpg'
+    },
+    {
+        title: null,
+        description: null,
+        link: '/img/memes/troll/40.jpg'
+    },
+    {
+        title: null,
+        description: null,
+        link: '/img/memes/troll/41.jpg'
+    },
+    {
+        title: null,
+        description: null,
+        link: '/img/memes/troll/42.jpg'
+    },
+    {
+        title: null,
+        description: null,
+        link: '/img/memes/troll/43.jpg'
+    },
+    {
+        title: null,
+        description: null,
+        link: '/img/memes/troll/45.jpg'
+    },
+    {
+        title: null,
+        description: null,
+        link: '/img/memes/troll/46.jpg'
+    },
+    {
+        title: null,
+        description: null,
+        link: '/img/memes/troll/47.jpg'
+    },
+    {
+        title: null,
+        description: null,
+        link: '/img/memes/troll/48.jpg'
+    },
+];
+
+export default {second, first}

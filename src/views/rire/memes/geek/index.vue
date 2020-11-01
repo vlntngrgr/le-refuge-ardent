@@ -12,9 +12,21 @@
                 @click.stop.prevent="openImage(m)"
                 :key="m.link" 
                 :src="m.link" 
-                v-for="m in list" 
+                v-for="m in second" 
             />
+        </div>
 
+        <hr/>
+
+        <div class="memes__items">
+            <img 
+                :alt="m.link" 
+                class="memes__item" 
+                @click.stop.prevent="openImage(m)"
+                :key="m.link" 
+                :src="m.link" 
+                v-for="m in first"
+            />
         </div>
 
         <div 
@@ -47,14 +59,22 @@ export default {
     },
 
     computed: {
-        list() {
+        first() {
             let ret = [];
-            Memes.forEach(m => {
+            Memes.first.forEach(m => {
                 ret.push(m);
             });
 
             return ret;
-        }
+        },
+        second() {
+            let ret = [];
+            Memes.second.forEach(m => {
+                ret.push(m);
+            });
+
+            return ret;
+        },
     },
 
     methods: {
