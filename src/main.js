@@ -7,8 +7,11 @@ import App from './App.vue'
 import routes from './routes'
 import store from './store'
 
-import { Debounce } from  './plugins'
+import Bootstrap from './bootstrap'
+
+import { Api } from  './plugins'
 import { ClickOutside } from  './plugins'
+import { Debounce } from  './plugins'
 
 import './styles/index.scss'
 
@@ -24,8 +27,12 @@ Vue.use(VueRouter)
 Vue.use(Debounce);
 Vue.use(ClickOutside);
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+Bootstrap()
+  .then(() => {
+    new Vue({
+      router,
+      store,
+      render: h => h(App)
+    }).$mount('#app')
+  })
+  .catch((error) => console.error(error));

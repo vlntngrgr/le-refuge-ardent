@@ -1,12 +1,15 @@
+import { default as API } from './api'
 import { default as Debounce } from './debounce'
 import { default as ClickOutside } from './click-outside'
 
 export {
+  API,
+  ClickOutside,
   Debounce,
-  ClickOutside
 }
 
 export default {
+  API,
+  ClickOutside,
   Debounce,
-  ClickOutside
 }

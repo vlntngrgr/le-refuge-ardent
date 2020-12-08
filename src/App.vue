@@ -5,7 +5,10 @@
         </div>
 
         <div>
-            <menu-primary :header="{ label: 'Le refuge ardent'}" :menu="menu" />
+            <menu-primary 
+                :header="{ label: 'Le refuge ardent'}" 
+                :menu="menu" 
+            />
 
             <menu-mood>
                 <template v-slot:header>Ton humeur</template>
@@ -204,8 +207,5 @@ export default {
             return ret;
         }
     },
-    mounted() {
-        console.log(process.env.NODE_ENV)
-    }
 };
 </script>

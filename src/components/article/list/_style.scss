@@ -1,0 +1,41 @@
+.articles {
+    $root: '.articles';
+
+    /////////////////////////////////////
+    // HEAD
+    /////////////////////////////////////
+    #{$root}__head {
+        $node: '.head';
+    }
+
+    /////////////////////////////////////
+    // BODY
+    /////////////////////////////////////
+    #{$root}__body {
+        $node: '.body';
+        
+        #{$node}__cell {
+            &:hover,
+            &:focus{
+                background-color: lightblue;
+                transform: scale(1.1);
+            }
+        }
+
+        #{$node}__row {
+            &:hover,
+            &:focus{
+                background-color: lightcoral;
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    /////////////////////////////////////
+    // FOOTER
+    /////////////////////////////////////
+    #{$root}__footer {
+        $node: '.footer';
+        
+    }
+}
