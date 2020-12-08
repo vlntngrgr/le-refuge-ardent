@@ -11,7 +11,19 @@
                 :key="m.key"
                 class="list__item link"
                 target="_blank"
-                v-for="m in musiques"
+                v-for="m in musiquesNew"
+                :href="m.url"
+            >{{ m.description }}</a>
+        </div>
+        
+        <hr />
+
+        <div class="list">
+            <a
+                :key="m.key"
+                class="list__item link"
+                target="_blank"
+                v-for="m in musiquesOld"
                 :href="m.url"
             >{{ m.description }}</a>
         </div>
@@ -33,7 +45,15 @@ export default {
     computed: {
         musiques() {
             return List;
-        }
+        },
+
+        musiquesNew() {
+            return this.musiques.filter(m => m.new)
+        },
+
+        musiquesOld() {
+            return this.musiques.filter(m => !m.new)
+        },
     }
 }
 </script>

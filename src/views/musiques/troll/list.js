@@ -1,5 +1,15 @@
 export default [
     {
+        description: 'Bon jovi : It’s my life (avec la compagnie d’héros d’anim…)',
+        url: 'https://www.youtube.com/watch?v=XQ8IeHMDlhQ',
+        new: true,
+    },
+    {
+        description: 'Vivir Quintana : Chanson sans peur (espagnol)',
+        url: 'https://www.youtube.com/watch?v=C_Ex_tCFo8c',
+        new: true,
+    },
+    {
         description: 'Renaud, C’est quand qu’on va où ?',
         url: 'https://www.youtube.com/watch?v=nnSQZRa_Pc8',
     },

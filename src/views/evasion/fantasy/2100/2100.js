@@ -129,5 +129,47 @@ export default {
                 },
             ]
         },
+        {
+            title: "Le village gris (2)",
+            date: "30/11/2020",
+            content: [
+                {
+                    tag: 'p',
+                    value: 'Pierre a attrapé 2 geckos aujourd’hui. Ils ne sont pas bien dodus, mais ils feront l’affaire. Il se dirige vers la caverne de Fleur ; il a décidé de partager avec elle. Il sait que ce n’est pas très malin ; les geckos se font rares pour le moment, et il a entendu des rumeurs préoccupantes sur le sujet. Il pourrait garder le deuxième pour lui, ce serait plus sûr.'
+                },
+                {
+                    tag: 'p',
+                    value: 'Pourtant, il est déterminé à aller voir Fleur. Sa compagnie vaut bien d’avoir un peu faim ces prochains jours. Fleur est la seule personne qui ne ressemble pas au village gris. Bien sûr, elle est elle aussi couverte de poussière, comme tous les enfants du village. Elle porte la même tunique grise, un de celles qu’on trouve dans le Stor, réserve quasi inépuisable de tenues au tissu rêche. Elle est maigre comme lui, et comme lui, il lui manque quelque chose.'
+                },
+                {
+                    tag: 'p',
+                    value: 'Mais Fleur est spéciale. D’abord, elle a passé plus de temps que quiconque avec lensègnent, le grand objet rectangle qui leur apprend des mots et passent des images en boucles. Pierre aime bien lensègnent, il le trouve reposant. Il fait aussi partie des enfants qui ont passés de nombreux jours assis devant lui. Mais ça ne nourrit pas son homme. Lensègnent ne donne pas de conseils pour les geckos, ne fournit pas de nourriture, ne s’adresse pas à toi. Il répète et répète des bribes de savoirs, des mots, des images, des choses qui ne font aucun sens parfois. Ou alors pour ailleurs. Ou pour le passé. A la longue, Pierre s’est lassé, comme tous les autres.'
+                },
+                {
+                    tag: 'p',
+                    value: 'Fleur non. Fleur dit qu’il y a des « images rares », qui ne reviennent pas souvent, et qui demandent d’attendre beaucoup près de lensègnent. Fleur est spéciale pour d’autres raisons aussi : les geckos sont meilleurs quand c’est elle qui les cuit, elle ajoute des choses que Pierre ne connait pas. Fleur invente des histoire, ce que personne d’autre ne se donne la peine de faire. Elle est la plus bavarde, elle dessine sur les murs aussi.'
+                },
+                {
+                    tag: 'p',
+                    value: 'Fleur a des yeux mauves, alors que tous les enfants du village ont les yeux gris. Et puis surtout, Fleur passe beaucoup, beaucoup de temps dans les grottes. Pas juste pour dormir. Pierre n’a jamais osé lui demandé ce qu’elle y faisait. Il a peur de ne pas comprendre la réponse. Fleur emploie des mots compliqués parfois, sûrement à cause de lensègnent. Ce n’est pas grave. Pierre veut quand même être en sa compagnie. Il a accéléré le pas en pensant à toutes ces choses, et le voilà déjà devant sa grotte. C’est la plus éloignée du centre du village, et donc du feu. Elle semble étroite et peu confortable, mais ce n’est qu’une impression : une fois à l’intérieur, elle s’élargit en une salle en cercle, où Fleur dessine et garde son propre feu.'
+                },
+                {
+                    tag: 'p',
+                    value: 'Pierre se demande si d’autres enfants du village savent cela. A part lui-même, il n’a jamais vu personne entrer dans la grotte de Fleur. Il se demande si Fleur dirait aussi qu’il est spécial. Peut-être qu’elle parlerait de toutes ces question, même s’il ne lui partage pas la moitié ; il a trop peur qu’elle ne l’accepte plus près d’elle. Aujourd’hui, il se sent en confiance ; il amène les deux geckos à partager, la nuit n’est pas encore tout à fait tombée. Tout est réuni pour que ça se passe bien.'
+                },
+                {
+                    tag: 'p',
+                    value: 'Il appelle Fleur depuis l’entrée de la grotte, doucement. Elle apparait dès le deuxième appel, avec un sourire plus grand que d’habitude. Elle semble contente de le voir et l’invite à entrer. Pierre la suit sans un mot, les deux geckos à sa ceinture. Il s’assied sur les coussins de feuilles près de son feu. Quel bel endroit ! Il dépose les bestiaux entre eux deux, et Fleur lui fait un signe de tête reconnaissant, et son sourire brille un peu plus.'
+                },
+                {
+                    tag: 'p',
+                    value: 'Pierre a chaud dans le creux du ventre. Il baisse les yeux et se concentre sur les mains de Fleur, qui prépare les geckos : enlève la tête et le bout des pattes, entaille la peau pour y déverser de la poudre blanchâtre et des herbes sèches, les embrochent sur un bois pointu et les met à cuire. Chacun tient le sien, chacun choisit sa cuisson. Le feu rosit les joues de Pierre. Il se sent bien.'
+                },
+                {
+                    tag: 'p',
+                    value: 'Le silence est profond et agréable. Il consacre toute son attention à la cuisson de son gecko : il faut le cuire assez pour que l’intérieur soit mangeable, sans faire noircir la peau. Il faut donc surveiller la distance avec le feu, éviter les grandes flammèches, et aussi le tourner régulièrement. Dehors, la nuit finit de tomber. Le silence se fait plus épais. C’est le temps du jour que Pierre préfère.'
+                },
+            ]
+        },
     ]
 }
