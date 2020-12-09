@@ -9,7 +9,7 @@ import store from './store'
 
 import Bootstrap from './bootstrap'
 
-import { Api } from  './plugins'
+import { API } from  './plugins'
 import { ClickOutside } from  './plugins'
 import { Debounce } from  './plugins'
 
@@ -26,6 +26,7 @@ const router = new VueRouter({
 Vue.use(VueRouter)
 Vue.use(Debounce);
 Vue.use(ClickOutside);
+Vue.use(API);
 
 Bootstrap()
   .then(() => {

@@ -24,96 +24,96 @@ import Page404 from './views/errors/404'
 
 const routes = [
   {
+    component: Accueil,
     name: 'accueil',
     path: '/',
-    component: Accueil
   },
   
   {
+    component: Musiques,
     name: 'musiques',
     path: '/musiques',
-    component: Musiques
   },
   {
+    component: MusiquesChill,
     name: 'musiques-chill',
     path: '/musiques/chill',
-    component: MusiquesChill
   },
   {
+    component: MusiquesTroll,
     name: 'musiques-troll',
     path: '/musiques/troll',
-    component: MusiquesTroll
   },
 
   {
+    component: Rire,
     name: 'rire',
     path: '/rire',
-    component: Rire
   },
   {
+    component: RireChroniques,
     name: 'rire-chroniques',
     path: '/rire/chroniques',
-    component: RireChroniques
   },
   {
+    component: RireChroniquesArticle,
     name: 'rire-chronique',
     path: '/rire/chroniques/:id',
-    component: RireChroniquesArticle
   },
   {
+    component: RireMemesGeek,
     name: 'rire-memes-geek',
     path: '/rire/memes/geek',
-    component: RireMemesGeek
   },
   {
+    component: RireMemesTroll,
     name: 'rire-memes-troll',
     path: '/rire/memes/troll',
-    component: RireMemesTroll
   },
 
   {
+    component: EvasionFantasy,
     name: 'evasion-fantasy',
     path: '/evasion/fantasy',
-    component: EvasionFantasy
   },
   {
+    component: EvasionFantasy2100,
     name: 'evasion-fantasy-2100',
     path: '/evasion/fantasy/2100',
-    component: EvasionFantasy2100
   },
 
   {
+    component: Meditation,
     name: 'meditation',
     path: '/meditation',
-    component: Meditation
   },
   {
+    component: Relaxation,
     name: 'relaxation',
     path: '/relaxation',
-    component: Relaxation
   },
   {
+    component: AutoCompassion,
     name: 'compassion',
     path: '/compassion',
-    component: AutoCompassion
   },
   {
+    component: AutoCompassionArticle,
     name: 'compassion-article',
     path: '/compassion/:id',
-    component: AutoCompassionArticle
   },
   
 
   {
+    component: MentionsLegales,
     name: 'mentions-legales',
     path: '/legal/mentions',
-    component: MentionsLegales
   },
 
   {
     name: '404',
     path: '/*',
-    component: Page404
+    component: Page404,
   }
 ]
 

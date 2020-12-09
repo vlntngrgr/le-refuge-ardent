@@ -48,6 +48,16 @@ export default {
                 },
             ]
         }
+    },
+
+    mounted() {
+        this.$find({ name: '2100' })
+            .then(() => {
+                
+            })
+            .catch((error) => {
+                console.error(error)
+            })
     }
 }
 </script>

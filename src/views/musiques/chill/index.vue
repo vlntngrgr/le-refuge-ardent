@@ -49,6 +49,6 @@ export default {
         musiquesSecond() {
             return ListSecond
         }
-    }
+    },
 }
 </script>

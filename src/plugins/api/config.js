@@ -1,15 +1,20 @@
-export let entities = [
-    {
+export default {
+    '2100': {
         name: '2100',
         uuid: 'fantasy.2100',
         model: {
             Date: { type: Date },
-            Chapitre: { type: String},
+            Chapitre: { type: String },
             Contenu: { type: String },
             Partie: { type: Number },
         },
+        routes: {
+            get: '2100-s',
+            view: '2100-s/$id',
+        },
     },
-    {
+
+    'compassion': {
         name: 'AutoCompassion',
         uuid: 'consience.compassion',
         model: {
@@ -17,8 +22,13 @@ export let entities = [
             Contenu: { type: String },
             Titre: { type: String },
         },
+        routes: {
+            get: 'compassions',
+            view: 'compassion/$id',
+        },
     },
-    {
+
+    'chronique': {
         name: 'Chronique',
         uuid: 'rire.chronique',
         model: {
@@ -26,8 +36,13 @@ export let entities = [
             Contenu: { type: String },
             Titre: { type: String },
         },
+        routes: {
+            get: 'chroniques',
+            view: 'chronique/$id',
+        },
     },
-    {
+
+    'meditation': {
         name: 'Meditation',
         uuid: 'consience.meditation',
         model: {
@@ -36,8 +51,13 @@ export let entities = [
             Description: { type: String },
             Media: { type: File },
         },
+        routes: {
+            get: 'meditations',
+            view: 'meditation/$id',
+        },
     },
-    {
+
+    'musiques': {
         name: 'Musique',
         uuid: 'musiques.chill|troll',
         model: {
@@ -45,8 +65,12 @@ export let entities = [
             Lien: { type: String },
             Titre: { type: String },
         },
+        routes: {
+            get: 'musiques'
+        },
     },
-    {
+    
+    'relaxation': {
         name: 'Relaxation',
         uuid: 'conscience.relaxation',
         model: {
@@ -55,14 +79,9 @@ export let entities = [
             Description: { type: String },
             Media: { type: File },
         },
+        routes: {
+            get: 'relaxations',
+            view: 'relaxation/$id',
+        },
     },
-]
-
-export let instance = (entity, data={}) => {
-    let ret = {}
-    let keys = Object.keys(entity.model)
-    keys.forEach(k => ret[k] = entity.model[k](k in data ? data[k] : null))
-    return ret
 }
-
-export default instance
