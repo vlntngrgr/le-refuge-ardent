@@ -1,59 +1,50 @@
 <template>
-    <main class="musiques">
-        <h1 class="title">Musiques Troll / Révolutionnaire</h1>
-        
-        <div class="description">
-            De la musique pour ceux qui ont des (sérieux) doutes sur nos systèmes, nos sociétés et la marche du monde en général, mais qui n’ont pas (encore) envie de se flinguer… 
-        </div>
+  <main class="musiques">
+    <h1 class="title">Musiques Troll / Révolutionnaire</h1>
 
-        <div class="list">
-            <a
-                :key="m.key"
-                class="list__item link"
-                target="_blank"
-                v-for="m in musiquesNew"
-                :href="m.url"
-            >{{ m.description }}</a>
-        </div>
-        
-        <hr />
+    <div class="description">
+      De la musique pour ceux qui ont des (sérieux) doutes sur nos systèmes, nos
+      sociétés et la marche du monde en général, mais qui n’ont pas (encore)
+      envie de se flinguer…
+    </div>
 
-        <div class="list">
-            <a
-                :key="m.key"
-                class="list__item link"
-                target="_blank"
-                v-for="m in musiquesOld"
-                :href="m.url"
-            >{{ m.description }}</a>
-        </div>
-    </main>
+    <div class="list">
+      <a
+        :key="m.key"
+        class="list__item link"
+        target="_blank"
+        v-for="m in musiques"
+        :href="m.url"
+      >{{ m.Titre }} <span class="-right">Ajoutée le {{ new Date(m.Date).toLocaleDateString() }}</span></a>
+    </div>
+  </main>
 </template>
 
 <script>
-import UiCard from '@/components/card'
-
-import List from './list'
+import MixinList from "@/mixins/list";
+import UiCard from "@/components/card";
 
 export default {
-    name: 'MusiquesTroll',
+  name: "MusiquesTroll",
 
-    components: {
-        UiCard
+  components: {
+    UiCard,
+  },
+
+  mixins: [MixinList],
+
+  computed: {
+    musiques() {
+      return this.list;
     },
 
-    computed: {
-        musiques() {
-            return List;
-        },
+    musiquesSecond() {
+      return [];
+    },
 
-        musiquesNew() {
-            return this.musiques.filter(m => m.new)
-        },
-
-        musiquesOld() {
-            return this.musiques.filter(m => !m.new)
-        },
-    }
-}
+    name() {
+      return "musiques.troll";
+    },
+  },
+};
 </script>

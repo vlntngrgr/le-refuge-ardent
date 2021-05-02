@@ -8,7 +8,7 @@ import Rire from './views/rire'
 import RireMemesGeek from './views/rire/memes/geek'
 import RireMemesTroll from './views/rire/memes/troll'
 import RireChroniques from './views/rire/chroniques'
-import RireChroniquesArticle from './views/rire/chroniques/articles'
+import RireChroniquesArticle from './views/rire/chroniques/item'
 
 import EvasionFantasy from './views/evasion/fantasy'
 import EvasionFantasy2100 from './views/evasion/fantasy/2100'
@@ -16,7 +16,7 @@ import EvasionFantasy2100 from './views/evasion/fantasy/2100'
 import Meditation from './views/consciente/meditation'
 import Relaxation from './views/consciente/relaxation'
 import AutoCompassion from './views/consciente/compassion'
-import AutoCompassionArticle from './views/consciente/compassion/articles'
+import AutoCompassionArticle from './views/consciente/compassion/item'
 
 import MentionsLegales from './views/legal/mentions'
 

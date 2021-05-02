@@ -45,7 +45,7 @@ html {
     padding: 1rem;
     width: 75%;
     
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 10px;;
     
     overflow-y: auto;
@@ -55,8 +55,6 @@ html {
         word-wrap: break-word;
         width: 100%;
         max-width: 100%;
-
-        padding-bottom: 1rem;
     }
 }
 
@@ -220,6 +218,11 @@ footer {
 
         color: black;
         text-decoration: none;
+
+        & .-right {
+            float: right;
+        }
+
         &:hover, 
         &:focus {
             background-color: darken(beige, 3%);
@@ -249,11 +252,15 @@ footer {
     border-bottom: .15rem solid black;
     margin-left: 2rem;
     padding-left: .5rem;
-
     background-color: beige;
 }
 
-
+.subtitle {
+    margin-left: 2rem;
+    padding-left: .5rem;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
 
 @media screen and (max-height: 500px) {
     .cookie {

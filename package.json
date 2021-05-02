@@ -1,6 +1,6 @@
 {
-  "name": "burning-shell",
-  "version": "0.1.0",
+  "name": "le-refuge-ardent",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

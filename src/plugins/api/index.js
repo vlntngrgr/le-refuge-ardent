@@ -1,38 +1,97 @@
 import Axios from 'axios'
 import Config from './config'
-import Factory from './factory'
+import {
+  endpoint,
+  model, 
+} from './factory'
 
-let api = {}
+const api = {}
 
-let http = Axios.create({   
-    baseURL: "http://dev.le-refuge-ardent.com:1337/",
-    headers: { 'Content-Type': 'application/json' }
-})
+let http = Axios.create({
+  baseURL: "http://localhost:1337/",
+  headers: { 'Content-Type': 'application/json' }
+});
 
 api.install = (Vue) => {
-    Vue.prototype.$http = http
+  Vue.prototype.$find = ({ limit, page, name }) => {
+    return new Promise((resolve, reject) => {
+      isDev && console.group('Vue.$find');
+      isDev && console.log('Searching config: ', name, ', for page: ', page, ', limited to: ', limit);
+      let config = Config.getById(name)
+      isDev && console.log('Config found: ', config);
 
-    Vue.prototype.$find = ({ name }) => {
-        return new Promise((resolve, reject) => {
-            http.get(Config[name].routes['get'])
-                .then((res) => {
-                    let collection = res.data.map((d, i) => Factory.build({ model: Config[name].model, data: d }))
-                    resolve(collection)
-                })
-                .catch((error) => reject(error))
-        })
-    }
+      if(config == null) {
+        isDev && console.warn('Config not found!');
+        isDev && console.groupEnd();
+        reject('config not found');
+      }
 
-    Vue.prototype.$view = ({ name, id }) => {
-        return new Promise((resolve, reject) => {
-            http.get(Config[name].routes['view'] + `/${id}`)
-                .then((res) => {
-                    let collection = Factory.build({ model: Config[name].model, data: res.data })
-                    resolve(collection)
-                })
-                .catch((error) => reject(error))
+      let start = (page - 1) * limit;
+      let route = endpoint({ 
+        params: { limit, start }, 
+        route: config.routes.get 
+      });
+      isDev && console.log('Route built: ', route);
+
+      http.get(route)
+        .then((response) => {
+          isDev && console.log('Fetch succeed: ', response.data);
+          let data = response.data;
+          if(data) {
+            data = data.map((d) => model({ model: config.model, data: d }))
+          }
+          resolve(data);
         })
-    }
+        .catch((e) => {
+          isDev && console.error('Failed fetching the route: ', route);
+          isDev && console.error(e);
+          reject(e);
+        })
+        .finally(() => {
+          isDev && console.groupEnd()
+        })
+    })
+  }
+
+  Vue.prototype.$view = ({ name, id }) => {
+    return new Promise((resolve, reject) => {
+      isDev && console.group('Vue.$view');
+      isDev && console.log('Searching config: ', name, ', for id: ', id);
+
+      let config = Config.getById(name)
+      isDev && console.log('Config found: ', config);
+
+      if(config == null) {
+        isDev && console.warn('Config not found!');
+        isDev && console.groupEnd();
+        reject('config not found');
+      }
+      
+      let route = endpoint({ 
+        params: { id }, 
+        route: config.routes.view
+      });
+      isDev && console.log('Route built: ', route);
+     
+      http.get(route)
+        .then((response) => {
+          isDev && console.log('Fetch succeed: ', response.data);
+          let data = response.data;
+          if(data) {
+            data = model({ model: config.model, data })
+          }
+          resolve(data);
+        })
+        .catch((e) => {
+          isDev && console.error('Failed fetching the route: ', route);
+          isDev && console.error(e);
+          reject(e);
+        })
+        .finally(() => {
+          isDev && console.groupEnd()
+        })
+    })
+  }
 }
 
 export default api

@@ -9,7 +9,7 @@ import store from './store'
 
 import Bootstrap from './bootstrap'
 
-import { API } from  './plugins'
+import { Api } from  './plugins'
 import { ClickOutside } from  './plugins'
 import { Debounce } from  './plugins'
 
@@ -23,10 +23,12 @@ const router = new VueRouter({
   routes
 });
 
+window.isDev = process.env.NODE_ENV === 'development'
+
 Vue.use(VueRouter)
 Vue.use(Debounce);
 Vue.use(ClickOutside);
-Vue.use(API);
+Vue.use(Api);
 
 Bootstrap()
   .then(() => {
@@ -36,4 +38,4 @@ Bootstrap()
       render: h => h(App)
     }).$mount('#app')
   })
-  .catch((error) => console.error(error));
+  .catch((error) => isDev && console.error(error));

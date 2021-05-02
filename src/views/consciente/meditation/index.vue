@@ -1,118 +1,111 @@
 <template>
-    <div>
-        <h1 class="title">Meditations</h1>
+  <main 
+    class="musiques" 
+    v-if="!loading">
+    <h1 class="title">Meditations</h1>
 
-        <div class="description lecteur">
-            <h3 v-if="hasSelection">
-                {{ selection.label }} <br/>
-                <span class="lent">Peut prendre du temps pour charger, patientez quelques secondes :)</span>    
-            </h3>
-            <h3 v-else>Lecteur: Aucune méditation selectionnée</h3>
+    <div class="description lecteur">
+      <h3 v-if="hasSelection">
+        {{ selection.Titre }} <br/><span class="lent">Peut prendre du temps pour charger, patientez quelques secondes :)</span></h3>
+      <h3 v-else>Lecteur: Aucune méditation selectionnée</h3>
 
-            <div class="lecteur__actions">
-                <button class="action" @click="play">play</button>
-                <button class="action" @click="pause">pause</button>
-                <button class="action" @click="stop">stop</button>
-            </div>
-        </div>
-        
-        <div class="list">
-            <ui-card
-                class="list__item"
-                size="small"
-                v-for="a in meditations"
-                :key="a.label"
-                @click="onSelect(a)">
-                <template v-slot:header>
-                    {{ a.label}}
-                </template>
-            </ui-card>
-        </div>
+      <div class="lecteur__actions">
+        <button class="action" @click="play">play</button>
+        <button class="action" @click="pause">pause</button>
+        <button class="action" @click="stop">stop</button>
+      </div>
     </div>
+    
+    <div class="list">
+      <ui-card
+        class="list__item"
+        size="small"
+        v-for="a in list"
+        :key="a.Titre"
+        @click="onSelect(a)"
+      ><template v-slot:header>{{ a.Titre }}</template></ui-card>
+    </div>
+  </main>
 </template>
 
 <script>
-import {Howl, Howler} from 'howler'
-
-import UiCard from '@/components/card'
+import { Howl } from "howler";
+import MixinList from "@/mixins/list";
+import UiCard from "@/components/card";
 
 export default {
-    name: 'Meditation',
+  name: "Meditation",
 
-    components: {
-        UiCard
+  components: {
+    UiCard,
+  },
+
+  mixins: [MixinList],
+
+  data() {
+    return {
+      reader: null,
+      selection: null,
+      state: null,
+    };
+  },
+
+  computed: {
+    hasSelection() {
+      return this.selection !== null && this.reader !== null;
     },
 
-    data() {
-        return {
-            reader: null,
-            selection: null,
-            state: null,
-        };
+    name() {
+      return "conscience.meditation";
+    },
+  },
+
+  methods: {
+    play() {
+      if (this.hasSelection && this.state === "loaded") {
+        this.reader.play();
+        this.state = "playing";
+      } else if (this.hasSelection && this.state === "paused") {
+        this.reader.play();
+        this.state = "playing";
+      }
+    },
+    stop() {
+      if (
+        this.hasSelection &&
+        ["loaded", "playing", "paused"].includes(this.state)
+      ) {
+        this.reader.stop();
+        this.selection = null;
+        this.reader = null;
+        this.state = null;
+      }
+    },
+    pause() {
+      if (this.hasSelection && this.state === "playing") {
+        this.reader.pause();
+        this.state = "paused";
+      }
     },
 
-    computed: {
-        hasSelection() {
-            return this.selection !== null && this.reader !== null;
-        },
+    onSelect(value) {
+      if (this.selection === null) {
+        this.selection = value;
 
-        meditations() {
-            return [
-                {
-                    label: 'Accueil des émotions',
-                    link: '/sounds/accueil-emotions.mp3',
-                },
-                {
-                    label: 'Paix intérieur',
-                    link: '/sounds/paix-interieur.mp3',
-                },
-            ]
-        }
+        this.reader = new Howl({
+          src: ['http://localhost:1337' + this.selection.Media.url]
+        });
+
+        this.state = "loaded";
+      } else {
+        this.reader.stop();
+        this.selection = value;
+        this.reader = new Howl({
+          src: ['http://localhost:1337' + this.selection.Media.url]
+        });
+        this.state = "loaded";
+      }
     },
-
-    methods: {
-        play() {
-            if(this.hasSelection && this.state === 'loaded') {
-                this.reader.play();
-                this.state = 'playing';
-            } else if (this.hasSelection && this.state === 'paused') {
-                this.reader.play();
-                this.state = 'playing';
-            }
-        },
-        stop(){
-            if(this.hasSelection && ['loaded', 'playing', 'paused'].includes(this.state)) {
-                this.reader.stop();
-                this.selection = null;
-                this.reader = null;
-                this.state = null;
-            }
-        },
-        pause(){
-            if(this.hasSelection && this.state === 'playing') {
-                this.reader.pause();
-                this.state = 'paused';
-            }
-        },
-
-        onSelect(value) {
-            if(this.selection === null) {
-                this.selection = value;
-
-                this.reader = new Howl({
-                    src: [this.selection.link]
-                });
-
-                this.state = 'loaded';
-            } else {
-                this.reader.stop();
-                this.selection = value;
-                this.reader = new Howl({
-                    src: [this.selection.link]
-                });
-                this.state = 'loaded';
-            }
-        }
-    },
-}
+  },
+};
 </script>
