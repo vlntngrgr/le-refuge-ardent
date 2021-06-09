@@ -73,7 +73,7 @@ export default {
     },
 
     getURL(path) {
-      return 'http://localhost:1337' + path
+      return 'https://admin.le-refuge-ardent.com' + path
     }
   },
 };

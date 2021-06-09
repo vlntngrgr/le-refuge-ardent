@@ -8,8 +8,7 @@ import {
 const api = {}
 
 let http = Axios.create({
-  baseURL: "http://localhost:1337/",
-  headers: { 'Content-Type': 'application/json' }
+  baseURL: "https://admin.le-refuge-ardent.com/"
 });
 
 api.install = (Vue) => {

@@ -93,7 +93,7 @@ export default {
         this.selection = value;
 
         this.reader = new Howl({
-          src: ['http://localhost:1337' + this.selection.Media.url]
+          src: ['https://admin.le-refuge-ardent.com' + this.selection.Media.url]
         });
 
         this.state = "loaded";
@@ -101,7 +101,7 @@ export default {
         this.reader.stop();
         this.selection = value;
         this.reader = new Howl({
-          src: ['http://localhost:1337' + this.selection.Media.url]
+          src: ['https://admin.le-refuge-ardent.com' + this.selection.Media.url]
         });
         this.state = "loaded";
       }
