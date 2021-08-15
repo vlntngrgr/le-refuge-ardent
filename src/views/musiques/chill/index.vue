@@ -10,7 +10,7 @@
         class="list__item link"
         target="_blank"
         v-for="m in list"
-        :href="m.url"
+        :href="m.Lien"
       >{{ m.Titre }} <span class="-right">Ajoutée le {{ new Date(m.Date).toLocaleDateString() }}</span></a>
     </div>
   </main>
