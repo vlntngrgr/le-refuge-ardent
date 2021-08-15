@@ -6,7 +6,7 @@
             <h3>Conditions générales d’utilisation du site « Le refuge ardent »</h3>
             <p>Les conditions d’utilisation du site internet « Le refuge ardent » sont explicitées ci-dessous.</p>
             <p>Les propriétaires et créateurs du site sont Aurélie Quintart et Valentin Grégoire. Ils se réservent le droit de modifier ou d’étoffer les présentes dispositions afin de répondre aux normes imposées par la législation. Ils peuvent être contactés via cette adresse mail : <a href="mailto:vlntngrgr@gmail.com">vlntngrgr@gmail.com</a></p>
-            <p>Tout utilisateur reconnait avoir lu et accepté les présentes mentions légales, avant toute consultation ou utilisation du site www……………………………….</p>
+            <p>Tout utilisateur reconnait avoir lu et accepté les présentes mentions légales, avant toute consultation ou utilisation du site <a href="https://le-refuge-ardent.com">https://le-refuge-ardent.com</a>.</p>
 
             <h3>Protection de la vie privée</h3>
             <p>Le site ne collecte pas de données à caractère personnel et ne dispose ni de cookies ni de statistiques.</p>
