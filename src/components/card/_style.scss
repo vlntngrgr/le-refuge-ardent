@@ -80,6 +80,15 @@
         width: 100%;
     }
 
+    ////////////////////////////////
+    //      State
+    ////////////////////////////////
+    &.-disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        
+    }
+
     @media screen and (max-width: 961px) {
         &.-s {
             min-width: 17.5rem;

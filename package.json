@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start": "yarn serve",
     "serve": "vue-cli-service serve",
     "build.dev": "NODE_ENV=development vue-cli-service build --development",
     "build.prod": "NODE_ENV=production vue-cli-service build --production"

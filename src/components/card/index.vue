@@ -44,6 +44,11 @@ export default {
     // },
 
     props: {
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+
         route: {
             type: String,
             default: null
@@ -66,6 +71,7 @@ export default {
         classes() {
             return {
                 'ui-card': true,
+                '-disabled': this.disabled,
 
                 '-s': this.size === 'small',
                 '-m': this.size === 'medium',
@@ -77,9 +83,9 @@ export default {
         },
 
        listeners() {
-           return {
+           return !this.disabled ? {
                ...this.$listeners
-           }
+           } : {}
        }
     },
 }

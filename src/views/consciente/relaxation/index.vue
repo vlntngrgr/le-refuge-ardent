@@ -6,11 +6,29 @@
       <h3 v-if="hasSelection">
         {{ selection.Titre }} <br /><span class="lent">Peut prendre du temps pour charger, patientez quelques secondes :)</span></h3>
       <h3 v-else>Lecteur: Aucune relaxation selectionnée</h3>
+    
+      <div v-if="loadingAudio || loading" class="loader">
+        <div class="body"></div>
+      </div>
 
-      <div class="lecteur__actions">
-        <button class="action" @click="play">play</button>
-        <button class="action" @click="pause">pause</button>
-        <button class="action" @click="stop">stop</button>
+       <div class="lecteur__actions">
+        <button 
+          class="action"
+          :disabled="loadingAudio"  
+          @click="play"
+        >play</button>
+        
+        <button 
+          class="action" 
+          :disabled="loadingAudio" 
+          @click="pause"
+        >pause</button>
+
+        <button 
+          class="action" 
+          :disabled="loadingAudio" 
+          @click="stop"
+        >stop</button>
       </div>
     </div>
 
@@ -18,6 +36,7 @@
       <ui-card
         class="list__item"
         size="small"
+        :disabled="loadingAudio || loading"
         v-for="a in list"
         :key="a.Titre"
         @click="onSelect(a)">
@@ -46,6 +65,7 @@ export default {
       reader: null,
       selection: null,
       state: null,
+      loadingAudio: false
     };
   },
 
@@ -69,17 +89,16 @@ export default {
         this.state = "playing";
       }
     },
+
     stop() {
-      if (
-        this.hasSelection &&
-        ["loaded", "playing", "paused"].includes(this.state)
-      ) {
+      if (this.hasSelection && ["loaded", "playing", "paused"].includes(this.state)) {
         this.reader.stop();
         this.selection = null;
         this.reader = null;
         this.state = null;
       }
     },
+
     pause() {
       if (this.hasSelection && this.state === "playing") {
         this.reader.pause();
@@ -88,23 +107,28 @@ export default {
     },
 
     onSelect(value) {
-      if (this.selection === null) {
-        this.selection = value;
-
-        this.reader = new Howl({
-           src: ['https://admin.le-refuge-ardent.com' + this.selection.Media.url]
-        });
-
-        this.state = "loaded";
-      } else {
+      if (this.selection !== null) {
         this.reader.stop();
-        this.selection = value;
-        this.reader = new Howl({
-           src: ['https://admin.le-refuge-ardent.com' + this.selection.Media.url]
-        });
-        this.state = "loaded";
       }
+
+      this.loadingAudio = true
+      this.selection = value
+      console.log(this.selection.Media[0])
+      this.reader = new Howl({
+        src: ['https://admin.le-refuge-ardent.com' + this.selection.Media[0].url],
+        onload: () => {
+          this.loadingAudio = false;
+          this.state = "loaded";
+        },
+        
+      });
     },
   },
+  beforeRouteLeave(to, from, next) {
+    if(this.selection != null) {
+      this.reader.stop();
+    }
+    next()
+  }
 };
 </script>
