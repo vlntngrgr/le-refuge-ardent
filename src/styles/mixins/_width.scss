@@ -1,0 +1,23 @@
+$widths: (
+    '100': '100%',
+    '50': '50%',
+
+    'full': '100vw',
+);
+
+@mixin width($w, $limits: false) {
+    $a: null;
+
+    @if map-has-key($widths, $w) {
+        $a: map-get($widths, $w);
+    } @else {
+        $a: $w;
+    }
+
+    width: $a;
+
+    @if limits {
+        min-width: $a;
+        max-width: $a;
+    }
+}

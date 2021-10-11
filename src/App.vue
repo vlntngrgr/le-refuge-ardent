@@ -1,22 +1,18 @@
 <template>
-  <div id="app">
+  <div>
     <div class="version" v-if="isDev">Development</div>
 
-    <div>
-      <menu-primary 
-        :header="{ label: 'Le refuge ardent' }" 
-        :menu="menu" 
-      />
+    <menu-primary 
+      :header="{ label: 'Le refuge ardent' }" 
+      :menu="menu" 
+    />
 
-      <menu-mood>
-        <template v-slot:header>Ton humeur</template>
-        <template>Ici ton menu d'humeur</template>
-      </menu-mood>
-
+    <main class="container">
+      <ui-loader />
       <router-view />
-    </div>
+    </main>
 
-    <footer>
+    <footer class="container">
       <div class="cookie">
         Ce site n’utilise pas de cookies… Sauf ceux double chocolat qui se sont
         sacrifiés pour que je puisse développer ledit site… Merci les gars
@@ -33,6 +29,7 @@
 </template>
 
 <script>
+import UiLoader from './components/loader'
 import MenuPrimary from "./components/primary";
 import MenuMood from "./components/mood";
 import MixinMenu from "./mixins/menu";
@@ -41,6 +38,8 @@ export default {
   name: "BurningShellIndex",
 
   components: {
+    UiLoader,
+
     MenuMood,
     MenuPrimary,
   },

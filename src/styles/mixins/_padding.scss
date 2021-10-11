@@ -1,0 +1,44 @@
+$paddings: (
+    'xs': '.25rem',
+    's': '.5rem',
+    'm': '1rem',
+    'l': '1.25rem',
+    'xl': '1.5rem',
+    'xxl': '2rem',
+);
+
+@mixin p($padding) {
+    $a: null;
+
+    @if map-has-key($paddings, $padding) {
+        $a: map-get($paddings, $padding);
+    } @else {
+        $a: $padding;
+    }
+
+    padding: $a;
+}
+
+@mixin px($padding) {
+    $a: null;
+
+    @if map-has-key($paddings, $padding) {
+        $a: map-get($paddings, $padding);
+    } @else {
+        $a: $padding;
+    }
+
+    padding: 0 $a;
+}
+
+@mixin py($padding) {
+    $a: null;
+
+    @if map-has-key($paddings, $padding) {
+        $a: map-get($paddings, $padding);
+    } @else {
+        $a: $padding;
+    }
+
+    padding: $a 0;
+}

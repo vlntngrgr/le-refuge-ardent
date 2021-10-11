@@ -1,0 +1,21 @@
+$sizes: (
+    "<s": 'max-width: 26.25rem',
+    ">s": 'min-width: 26.25rem',
+
+    "<m": 'max-width: 48rem',
+    ">m": 'min-width: 48rem',
+
+    "<l": 'max-width: 64rem',
+    ">l": 'min-width: 64rem',
+
+    "<xl": 'max-width: 90rem',
+    ">xl": 'min-width: 90rem',
+);
+
+@mixin media($size) {
+    $a: map-get($sizes, $size);
+    
+    @media screen and ($a) {
+        @content;
+    }
+}

@@ -1,0 +1,48 @@
+@use "sass:map";
+
+$margins: (
+    'auto': auto,
+
+    'xs': '.25rem',
+    's': '.5rem',
+    'm': '1rem',
+    'l': '1.25rem',
+    'xl': '1.5rem',
+    'xxl': '2rem',
+);
+
+@mixin m($margin) {
+    $a: null;
+
+    @if map-has-key($margins, $margin) {
+        $a: map-get($margins, $margin);
+    } @else {
+        $a: $margin;
+    }
+
+    margin: $a;
+}
+
+@mixin mx($margin) {
+    $a: null;
+
+    @if map-has-key($margins, $margin) {
+        $a: map-get($margins, $margin);
+    } @else {
+        $a: $margin;
+    }
+
+    margin: 0 $a;
+}
+
+@mixin my($margin) {
+    $a: null;
+
+    @if map-has-key($margins, $margin) {
+        $a: map-get($margins, $margin);
+    } @else {
+        $a: $margin;
+    }
+
+    margin: $a 0;
+}
