@@ -113,7 +113,7 @@ export default {
 
       this.loadingAudio = true
       this.selection = value
-      console.log(this.selection.Media[0])
+      
       this.reader = new Howl({
         src: ['https://admin.le-refuge-ardent.com' + this.selection.Media[0].url],
         onload: () => {

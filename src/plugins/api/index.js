@@ -47,7 +47,7 @@ api.install = (Vue) => {
           reject(e);
         })
         .finally(() => {
-          isDev && console.groupEnd()
+          isDev && console.groupEnd('Vue.$find')
         })
     })
   }
@@ -90,6 +90,23 @@ api.install = (Vue) => {
           isDev && console.groupEnd()
         })
     })
+  }
+
+  Vue.prototype.$visited = () => {
+    isDev && console.group('Vue.$visited');
+    isDev && console.group('Get the number of time that the website has been visited');
+
+    http.get('/visitors')
+      .then((r) => {
+        let counter = r && r.data && r.data.Counter || 0
+        if(counter != null) {
+          counter = parseInt(counter, 10) + 1
+        }
+        return http.put('/visitors', {  Counter: counter })
+      })
+      .then(() => isDev && console.log('Visited has been updated!'))
+      .catch((e) => console.error(e))
+      .finally(() => console.groupEnd('Vue.$visited'));
   }
 }
 
