@@ -8,7 +8,7 @@
     />
 
     <main class="container">
-      <ui-loader />
+      <!-- <ui-loader /> -->
       <router-view />
     </main>
 
