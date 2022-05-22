@@ -54,5 +54,9 @@ export default {
       return process.env.NODE_ENV === "development";
     },
   },
+
+  mounted() {
+    this.$visited()
+  }
 };
 </script>
